@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/main.css">
+  <script src="../Js/constVariables.js"></script>
+  <script src="../Js/UjjainDarshan.js"></script>
+  <script src="../Js/table2excel.js"></script>
+ 
+  <title>Document</title>
+</head>
+<body>
+  <!---------------------------------------header------------------------------------------>
+   
+  <header class="header">
+    <a href="../index.html">
+      <div><i class="fa-solid fa-arrow-right-from-bracket logout" style="color: #ffffff;"></i></div>
+      <img class="logout" src="../images/logout.png">
+    </a>
+
+    <img class="profile-img" src="../images/Bhanu-prakash.png">
+    <div class="Bhanu">
+      <p class="Admin-User" style="margin-left: 350px;">Admin User</p>
+      <a class="alink" href="../HTML/viewprofile.html">
+        <p class="view-profile"> View Profile &gt;
+      </a></p>
+    </div>
+
+    <div class="date-time">
+      <p id="date">Fri 14 July</p>
+      <P id="time" id="datetime">03 : 20 PM</P>
+    </div>
+
+  </header>
+  
+  <!------------------------side bar-------------------------------->
+  <aside class="side-bar">
+    <img class="img" src="../images/ujjain-darshan@3x.png" alt="image">
+    <a href="../Home/index.html">
+      <div   id="Home" style="background-color: #ffffff; color: black;" onclick="Dashboard()">  <i class="fa-solid fa-house"></i>  Dashboard Home </div>
+    </a>
+    <a href="../HotelBooking/index.html">
+     <div id="Hotel-Booking" style="background-color: #ffffff; color: black;" onclick="hotelBooking()"><i class="fa-solid fa-hotel"></i>  Hotel Booking</div>
+    </a>
+    <a href="../PujaBooking/index.html">
+      <div id="Puja-Booking" style="background-color: #ffffff; color: black;" onclick="pujaBooking()"><i class="fa-solid fa-gopuram"></i>  Puja Booking</div>
+    </a>
+    <a href="../UjjainDarshan/index.html">
+       <div id="Ujjain-Darshan" style="background-color:#ff5c02;color: #ffffff; " onclick="ujjainDarshan()">  <i class="fa-solid fa-archway"></i>  Ujjain Darshan</div>
+    </a>
+    <a href="../OmkareshwaraTour/index.html"> 
+     <div id="Omkarshwar-Tour" style="background-color: #ffffff; color: black;" onclick="omkarshwarTour()"> <i class="fa-solid fa-om"></i></i> Omkareshwar Tour</div>
+    </a> 
+    <a href="../Maa.BaglamukhiTour/index.html">
+      <div id="Maa-Baglamukki-Tour" style="background-color: #ffffff; color: black;" onclick="maaBaglamukkiTour()"><i class="fa-solid fa-person-walking-luggage"> </i>   Maa Baglamukhi Tour</div>
+    </a>
+   <a href="../TaxiServices/index.html"> 
+     <div id="Taxi-Services" style="background-color: #ffffff; color: black;" onclick="taxiServices()"><i class="fa-solid fa-car-side"></i>  Taxi Services</div>
+   </a>
+    <a href="../AirportRides/index.html">
+      <div id="Airport-Rides" style="background-color: #ffffff; color: black;" onclick="airportRides()"><i class="fa-solid fa-plane"></i>  Airport Rides</div>
+    </a>
+    <a href="../Shopping/index.html">
+      <div id="Shopping" style="background-color: #ffffff; color: black;" onclick="shopping()"><i class="fa-solid fa-gifts"></i>  Shopping </div>
+    </a>
+  </aside>
+   
+
+   
+   <!-------------------------Ujjain html---------------------------->
+   <div class="loader" id="loader_ujjain"></div>
+   <main class="main" id="Ujjain" >
+    
+     <p class="ujjain_Bookings">Ujjain Darshan Bookings</p>
+ 
+     <div class="ujjain_card">
+       <img src="../images/combined-shape@3x.png" alt="">
+       <p> Payments</p>
+       <div class="ujjain_rupee">2300</div>
+       <div class="ujjain_rupee1">1800</div>
+       <div class="ujjain_cash">By Cash</div>
+       <div class="ujjain_online">Online</div>
+     </div>
+ 
+     <div class="ujjain_cards">
+       <img src="../images/request@3x.png" alt="">
+       <p>Bookings</p>
+       <div class="ujjain_rup">50</div>
+       <div class="ujjain_pay">Total</div>
+       <div class="ujjain_rup1">24</div>
+       <div class="ujjain_pay1">Ongoing</div>
+       <div class="ujjain_rup2">6</div>
+       <div class="ujjain_pay2">Finished</div>
+       <div class="ujjain_rup3">12</div>
+       <div class="ujjain_pay3">Reserved</div>
+     </div>
+
+     <div class="puja-download-alignment01">
+      <p class="puja_user">User Requests</p>
+      <div class="puja-download-alignment02">
+        <div class="puja_align"><button class="puja_Download" onclick="ujjainDownload()"> Download </button> </div>
+        <!-- <div class="puja_align1"><img class="puja_img1" src="../images/download.PNG" alt=""></div> -->
+
+      </div>
+    </div>
+  
+ 
+     <div class="ujjain_table-container" id="ujjainDiv">
+        <table>
+         <thead>
+           <tr>
+             <th class="ujjain_left">S.No</th>
+             <th>User Name</th>
+             <th>Mobile Number</th>
+             <th>Members</th>
+             <th>Price ( ₹ )</th>
+             <th>Status</th>
+             <th class="ujjain_right">Response</th>
+           </tr>
+         <tbody>
+           <tr>
+             <td>1</td>
+             <td>Bhanu Prakash</td>
+             <td>9876543210</td>
+             <td style="text-align: center;" onmouseover="clickplaceM()" onmouseout="packageDiv()">3</td>
+             <td>399.00</td>
+             <td class="allocated">Allocated</td>
+           </tr>
+         </tbody>
+         <tbody>
+           <tr>
+             <td>2</td>
+             <td>Sivaji Chava</td>
+             <td>9876543210</td>
+             <td class="cell5" onmouseover="clickplace1()" onmouseout="packageDiv1()">3</td>
+             <td class="cell5">450.00</td>
+             <td id="ujjain_statusCell2" class="waiting">Waiting to Respond</td>
+             <td id="ujjain_act2" class="actions">
+               <button class="approve" onclick="ujjain_aprve4()">Approve </button>
+               <button class="reject" onclick="ujjain_rect4()">Reject</button>
+             </td>
+           </tr>
+         </tbody>
+         <tbody>
+           <tr>
+             <td>3</td>
+             <td>Chaithanya N</td>
+             <td>9876543210</td>
+             <td class="cell5" onmouseover="clickplace2()" onmouseout="packageDiv2()">3</td>
+             <td class="cell5">1200.00</td>
+             <td class="rejected">Rejected</td>
+             <td></td>
+           </tr>
+         </tbody>
+         <tbody>
+           <tr>
+             <td>4</td>
+             <td>Umesha N</td>
+             <td>9876543210</td>
+             <td class="cell5" onmouseover="clickplace3()" onmouseout="packageDiv3()">3</td>
+             <td class="cell5">2500.00</td>
+             <td id="ujjain_statusCell4" class="waiting">Waiting to Respond</td>
+             <td id="ujjain_act4" class="actions">
+               <button class="approve" onclick="ujjain_approve4()">Approve </button>
+               <button class="reject" onclick="ujjain_reject4()">Reject</button>
+             </td>
+           </tr>
+         </tbody>
+         </thead>
+       </table>
+     </div>
+
+
+     <!-- firstdiv -->
+    <div class="firstPop" style=" background-color:rgb(245, 102, 102); border-radius: 8px; margin-left: 10px; display: none; box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;" id="PlaceDivM">
+      <div style="width: 140px; height: 111px; border: none; border-radius: 5px;">
+        <h3 style=" color: white; margin: 10px; font-family: sans-serif; font-size: 15px; text-underline-offset: 8px;text-decoration: underline; ">Package List</h3>
+     
+        <div style="text-decoration: underline;"></div>
+        <div style="margin: 10px; color: white; ">
+          <h6 style="margin: 10px 0px; font-family: sans-serif; font-size: 13px;"> 1.Ram Ghat </h6>
+          <h6 style="margin: 10px 0px; font-family: sans-serif; font-size: 13px;"> 2.Shiva Temple</h6>
+          <h6 style="margin: 10px 0px; font-family: sans-serif; font-size: 13px;">3.Rama Mandhir</h6>
+       
+        </div>
+      </div>
+    </div>
+    <!-- seconddiv -->
+    <div style="position: absolute; top: 553px; left: 960px; background-color: gray; border-radius: 8px; display: none;  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;" id="PlaceDiv1">
+      <div>
+      <div style="width: 140px; height: 111px; border: none; border-radius: 5px;">
+       <h3 style=" color: white; margin: 10px; font-family: sans-serif; font-size: 15px; text-underline-offset: 8px;text-decoration: underline;" >Package List</h3>
+   
+       <div style="text-decoration: underline;"></div>
+        <div style="margin: 10px; color: white; ">
+         <h6 style="margin: 10px 0px; font-family: sans-serif; font-size: 13px;"> 1.Ram Ghat </h6>
+         <h6 style="margin: 10px 0px; font-family: sans-serif; font-size: 13px;"> 2.Shiva Temple</h6>
+         <h6 style="margin: 10px 0px; font-family: sans-serif; font-size: 13px;">3.Rama Mandhir</h6>
+     
+        </div>
+      </div>
+    </div>
+    </div>
+  <!-- 3rddiv -->
+  <div style="position: absolute; top: 614px; left: 960px; background-color: gray; border-radius: 8px; display: none;  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;" id="PlaceDiv2">
+    <div style="width: 140px; height: 111px; border: none; border-radius: 5px;">
+     <h3 style=" color: white; margin: 10px; font-family: sans-serif; font-size: 15px; text-underline-offset: 8px;text-decoration: underline; ">Package List</h3>
+  
+     <div style="text-decoration: underline; "></div>
+      <div style="margin: 10px; color: white; ">
+        <h6 style="margin: 10px 0px; font-family: sans-serif; font-size: 13px;"> 1.Ram Ghat </h6>
+        <h6 style="margin: 10px 0px; font-family: sans-serif; font-size: 13px;"> 2.Shiva Temple</h6>
+        <h6 style="margin: 10px 0px; font-family: sans-serif; font-size: 13px;">3.Rama Mandhir</h6>
+   
+     </div>
+    </div>
+  </div>
+<!-- 4thDiv -->
+    <div style="position: absolute; top: 570px; left: 960px; background-color: gray; border-radius: 8px; display: none;  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;" id="PlaceDiv3">
+      <div style="width: 140px; height: 111px; border: none; border-radius: 5px;">
+        <h3 style=" color: white; margin: 10px; font-family: sans-serif; font-size: 15px;text-underline-offset: 8px;text-decoration: underline;">Package List</h3>
+    
+        <div style="text-decoration: underline;"></div>
+        <div style="margin: 10px; color: white; ">
+          <h6 style="margin: 10px 0px; font-family: sans-serif; font-size: 13px;"> 1.Ram Ghat </h6>
+          <h6 style="margin: 10px 0px; font-family: sans-serif; font-size: 13px;"> 2.Shiva Temple</h6>
+          <h6 style="margin: 10px 0px; font-family: sans-serif; font-size: 13px;">3.Rama Mandhir</h6>
+       
+        </div>
+      </div>
+    </div>
+
+
+   </main>
+   <script src="../Js/date&time.js"></script>
+</body>
+</html>

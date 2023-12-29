@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/main.css">
+  <script src="../Js/constVariables.js"></script>
+  <script src="../Js/main.js"></script>
+  <script src="../Js/table2excel.js"></script>
+ 
+  <title>Ujjain Admin </title>
+</head>
+<body>
+
+  <!---------------------------------------header------------------------------------------>
+   
+  <header class="header">
+    <a href="../index.html">
+      <div><i class="fa-solid fa-arrow-right-from-bracket logout" style="color: #ffffff;"></i></div>
+      <img class="logout" src="../images/logout.png">
+    </a>
+
+    <img class="profile-img" src="../images/Bhanu-prakash.png">
+    <div class="Bhanu">
+      <p class="Admin-User" style="margin-left: 350px;">Admin User</p>
+      <a class="alink" href="../ViewProfile.html">
+        <p class="view-profile"> View Profile &gt;
+      </a></p>
+    </div>
+
+    <div class="date-time">
+      <p id="date">Fri 14 July</p>
+      <P id="time" id="datetime">03 : 20 PM</P>
+    </div>
+
+  </header>
+  
+  <!------------------------side bar-------------------------------->
+   <aside class="side-bar">
+    <img class="img" src="../images/ujjain-darshan@3x.png" alt="image">
+    <div id="Home" style="background-color:#ff5c02;color: #ffffff; " onclick="Dashboard()">  <i class="fa-solid fa-house"></i>  Dashboard Home </div>
+    <a href="../HotelBooking/index.html" style="color: black;"> 
+      <div id="Hotel-Booking"  onclick="hotelBooking()"><i class="fa-solid fa-hotel "></i>  Hotel Booking</div>
+    </a>
+    <a href="../PujaBooking/index.html" style="color: black;"> 
+      <div id="Puja-Booking" onclick="pujaBooking()"><i class="fa-solid fa-gopuram"></i>  Puja Booking</div>
+    </a>
+    <a href="../UjjainDarshan/index.html" style="color: black;">
+      <div id="Ujjain-Darshan" onclick="ujjainDarshan()">  <i class="fa-solid fa-archway"></i>  Ujjain Darshan</div>
+    </a>
+    <a href="../OmkareshwaraTour/index.html" style="color: black;">
+      <div id="Omkarshwar-Tour" onclick="omkarshwarTour()"> <i class="fa-solid fa-om"></i></i> Omkareshwar Tour</div>
+    </a>
+    <a href="../Maa.BaglamukhiTour/index.html" style="color: black;">
+      <div id="Maa-Baglamukki-Tour" onclick="maaBaglamukkiTour()"><i class="fa-solid fa-person-walking-luggage"> </i>   Maa Baglamukhi Tour</div>
+    </a>
+    <a href="../TaxiServices/index.html" style="color: black;">
+      <div id="Taxi-Services" onclick="taxiServices()"><i class="fa-solid fa-car-side"></i>  Taxi Services</div>
+    </a>
+    <a href="../AirportRides/index.html" style="color: black;">
+       <div id="Airport-Rides" onclick="airportRides()"><i class="fa-solid fa-plane"></i>  Airport Rides</div>
+    </a>
+    <a href="../Shopping/index.html" style="color: black;">
+      <div id="Shopping" onclick="shopping()"><i class="fa-solid fa-gifts"></i>  Shopping </div>
+    </a>
+
+  </aside>
+   
+
+  <!---------------------------home html---------------------------->
+  <div class="loader" id="loader_dash"></div>
+  <main class="main" id="homepage">
+   <p class="Dashbord_Hotel_Bookings">Dashboard</p>
+     <div class="Dashborad_data">
+      <!-- <div class="Dashboard_card">
+        <img src="images/kyc_info.png" alt="">
+        <p class="Dashboard_kyc_info">KYC Info </p>
+        <div class="Dashbord_Verified"> Verified </div>
+        <div class="Dashbord_cash">Status</div>
+      </div> -->
+      <div class="Dashboard_card1">
+        <img class="paymentimg" src="../images/tran1.png" alt="">
+        <p class="Dashboard_kyc_info1">Payments</p>
+        <div class="Dashboard_ruppe">2350</div>
+        <div class="Dashboard_ruppe1">1800</div>
+        <div class="Dashboard_cash1">By Cash</div>
+        <div class="Dashboard_online1">Online</div>
+      </div>
+      <div class="Dashboard_card3">
+        <i class="fa-solid fa-code-pull-request" style="color: #e88b21;"></i>
+        <img class="bookingimg" src="../images/request@3x.png" alt="">
+        <p class="Dashboard_kyc_info3">Booking Orders</p>
+        <div class="Dashboard_divsetion1">
+          <div>
+            <div class="Dashboard_order1">24</div>
+            <div class="Dashboard_orderdata22">Hotel</div>
+          </div>
+          <div>
+            <div class="Dashboard_orderdata11">68</div>
+            <div class="Dashboard_orderdata23">Puja</div>
+          </div>
+          <div>
+            <div class="Dashboard_orderdata12">24</div>
+            <div class="Dashboard_orderdata24">Visitings</div>
+          </div>
+          <div>
+            <div class="Dashboard_orderdata13">12</div>
+            <div class="Dashboard_orderdata25">Taxi</div>
+          </div>
+          <div>
+            <div class="Dashboard_orderdata14">24</div>
+            <div class="Dashboard_orderdata26">Airport</div>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+    <div id="userrequest_div">
+    <p class="Dashboard_userRequest">User Requests</p>
+    <div class="download"><button class="Dashborad_datadownload" id="downloadexcel" onclick="homeDownload01()"> Download </button> </div>
+    <!-- <div class="Dashboard_filterdatadownload"><img class="img1" src="images/download.PNG" alt=""></div> -->
+    </div> 
+
+    <div class="Dashboard_table-container" id="dashboarddiv">
+      <!-- <table id="example-table">
+        <thead>
+          <tr>
+            <th class="Dashboard_left">S.No</th>
+            <th>User Name</th>
+            <th>Mobile Number</th>
+            <th>Request for</th>
+            <th>Price ( ₹ )</th>
+            <th>Status</th>
+            <th class="Dashboard_right ">Response</th>
+          </tr>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Kuram Surendra</td>
+            <td>8660782020</td>
+            <td>Hotel Room</td>
+            <td>399.00</td>
+            <td id="Dashboard_statusCell1" class="waiting">Waiting to Respond</td>
+            <td id="Dashboard_act3" class="actions">
+              <button class="approve" onclick="accept13()">Approve </button>
+              <button class="reject" onclick="reject13()">Reject</button>
+            </td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td>2</td>
+            <td>Basavaraj Darur</td>
+            <td>8660782020</td>
+            <td class="cell4">Taxi city Ride</td>
+            <td class="cell5">450.00</td>
+            <td id="Dashboard_statusCell4" class="waiting">Waiting to Respond</td>
+            <td id="Dashboard_act4" class="actions">
+              <button class="approve" onclick="accept21()">Approve </button>
+              <button class="reject" onclick="reject21()">Reject</button>
+            </td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td>3</td>
+            <td>Chandra Mahesh</td>
+            <td>8660782020</td>
+            <td class="cell4">Ujjain Visiting Places</td>
+            <td class="cell5">1200.00</td>
+            <td id="Dashboard_statusCell22" class="waiting">Waiting to Respond</td>
+            <td id="Dashboard_act22" class="actions">
+              <button class="approve" onclick="accept34()">Approve </button>
+              <button class="reject" onclick="reject34()">Reject</button>
+            </td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td>4</td>
+            <td>Karthik Bontha</td>
+            <td>8660782020</td>
+            <td class="cell4">Omkareshwar Tour</td>
+            <td class="cell5">2500.00</td>
+            <td id="Dashboard_statusCell5" class="waiting">Waiting to Respond</td>
+            <td id="Dashboard_act5" class="actions">
+              <button class="approve" onclick="accept42()">Approve </button>
+              <button class="reject" onclick="reject42()">Reject</button>
+            </td>
+          </tr>
+        </tbody>
+        </thead>
+      </table> -->
+    </div>
+  </main>
+
+</body>
+<script src="../Js/date&time.js"></script>
+</html>

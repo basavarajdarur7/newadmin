@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/main.css">
+  <script src="../Js/constVariables.js"></script>
+  <script src="../Js/HotelBooking.js"></script>
+  <script src="../Js/table2excel.js"></script>
+  
+  <!-- <script src="../Js/main.js"></script> -->
+  <title>HotelBooking</title>
+</head>
+<body>
+  
+   <!---------------------------------------header------------------------------------------>
+   
+   <header class="header">
+    <a href="../index.html">
+      <div><i class="fa-solid fa-arrow-right-from-bracket logout" style="color: #ffffff;"></i></div>
+      <img class="logout" src="../images/logout.png">
+    </a>
+
+    <img class="profile-img" src="../images/Bhanu-prakash.png">
+    <div class="Bhanu">
+      <p class="Admin-User" style="margin-left: 350px;">Admin User</p>
+      <a class="alink" href="../ViewProfile.html">
+        <p class="view-profile"> View Profile &gt;
+      </a></p>
+    </div>
+
+    <div class="date-time">
+      <p id="date">Fri 14 July</p>
+      <P id="time" id="datetime">03 : 20 PM</P>
+    </div>
+
+  </header>
+
+  <!------------------------side bar-------------------------------->
+  <aside class="side-bar">
+    <img class="img" src="../images/ujjain-darshan@3x.png" alt="image">
+   <a href="../Home/index.html"  style="color: black;"> 
+    <div id="Home" style="background-color: #ffffff; color: black;" onclick="Dashboard()">  <i class="fa-solid fa-house"></i>  Dashboard Home </div>
+   </a>
+   
+    <a href="../HotelBooking/index.html"  style="color: black;">
+      <div id="Hotel-Booking" style="background-color:#ff5c02;color: #ffffff; " class="Color_aside_divs"  onclick="hotelBooking()"><i class="fa-solid fa-hotel"></i>  Hotel Booking</div>
+    </a>
+  
+   <a href="../PujaBooking/index.html"  style="color: black;"> 
+    <div id="Puja-Booking" style="background-color: #ffffff; color: black;" onclick="pujaBooking()"><i class="fa-solid fa-gopuram"></i>  Puja Booking</div>
+   </a>
+
+    <a href="../UjjainDarshan/index.html"  style="color: black;">
+      <div id="Ujjain-Darshan" onclick="ujjainDarshan()">  <i class="fa-solid fa-archway"></i>  Ujjain Darshan</div>
+    </a>
+   <a href="../OmkareshwaraTour/index.html"  style="color: black;"> 
+     <div id="Omkarshwar-Tour" onclick="omkarshwarTour()"> <i class="fa-solid fa-om"></i></i> Omkareshwar Tour</div>
+   </a>
+    <a href="../Maa.BaglamukhiTour/index.html"  style="color: black;">
+      <div id="Maa-Baglamukki-Tour" onclick="maaBaglamukkiTour()"><i class="fa-solid fa-person-walking-luggage"> </i>   Maa Baglamukhi Tour</div>
+    </a>
+    <a href="../TaxiServices/index.html"  style="color: black;">
+      <div id="Taxi-Services" onclick="taxiServices()"><i class="fa-solid fa-car-side"></i>  Taxi Services</div>
+    </a>
+    <a href="../AirportRides/index.html"  style="color: black;">
+     <div id="Airport-Rides" onclick="airportRides()"><i class="fa-solid fa-plane"></i>  Airport Rides</div>
+    </a>
+    <a href="../Shopping/index.html"  style="color: black;">
+      <div id="Shopping" onclick="shopping()"><i class="fa-solid fa-gifts"></i>  Shopping </div>
+    </a>
+  </aside>
+
+
+  <!---------------------------hotel html----------------------------->
+  <div class="loader" id="loader_hotel"></div>
+  <main class="main Kuram" id="hotel" >
+   
+    <p class="Hotel-Bookings">Hotel Bookings</p>
+    
+    <div class="Hotel_card">
+      <img src="../images/combined-shape@3x.png" alt="">
+      <p>Payments</p>
+      <div class="Hotel_rupee">2350</div>
+      <div class="Hotel_rupee1">1800</div>
+      <div class="Hotel_cash">By Cash</div>
+      <div class="Hotel_online">Online</div>
+    </div>
+
+    <div class="Hotel_cards">
+      <img src="../images/request@3x.png" alt="">
+      <p>Bookings</p>
+      <div class="Hotel_rup">50 </div>
+      <div class="Hotel_pay">Total</div>
+      <div class="Hotel_rup1">24</div>
+      <div class="Hotel_pay1">Occupied</div>
+      <div class="Hotel_rup2">6</div>
+      <div class="Hotel_pay2">Available</div>
+      <div class="Hotel_rup3">12</div>
+      <div class="Hotel_pay3">Reserved</div>
+    </div>
+
+
+    <div class="Hotel_cards01">
+      <div class="hotel-card-alignment01">
+        <img src="../images/request@3x.png" alt="" class="hotel-card-image01">
+        <p class="hotel-booking-heading01">Hotels</p>
+        <!-- <div class="add-hotel-line01" onclick="addHotelClick01()"><p class="add-option01">+ Add Hotel</p></div> -->
+
+      </div>
+
+      <div class="hotel-card-alignments03">
+
+        <div class="hotel-posit01">
+          <div class="Hotel_rup">20 </div>
+          <div class="Hotel_pay">Total</div>
+        </div>
+
+        <div class="hotel-posit02">
+          <div class="Hotel_rup">12 </div>
+          <div class="Hotel_pay">Occupied</div>
+        </div>
+
+        <div class="hotel-posit03">
+          <div class="Hotel_rup">8 </div>
+          <div class="Hotel_pay">Available</div>
+        </div>
+       
+      </div>
+      
+      
+      
+     
+    </div>
+
+  </div>
+
+    <div class="hotel-download-alignment011">
+      <p class="Hotel_user">User Requests</p>
+      <div class="hotel-download-alignment012">
+        <!-- <div class="download"><button class="Dashborad_datadownload1" onclick="onclickbutton()"> Add Hotel Manually</button> </div> -->
+        <div class="Hotel_align"><button class="Hotel_Download Dashborad_datadownload011" id="downloadexcel1" onclick="downLoadExcel()">Download</button></div>
+        <!-- <div class="Hotel_align1"><img class="Hotel_img1" src="../images/download.PNG" alt=""></div> -->
+
+      </div>
+
+    </div>
+    
+    
+
+    <div class="popuhotel">
+      <div id="hotelsavediv" style="display: none;">
+
+        <div class="add-alignment01">
+          <h1 class="add-new-hotel-heading">Add New Hotel</h1>
+          <img src="../images/OIP (1).jpg" onclick="intoMarkPopup()" alt="" class="into-mark-image01">
+        </div>
+
+
+        <div class="hotel-images-alignment01">
+          <img src="../images/4.png" alt="" class="hotel-popup-image01">
+          <img src="../images/5.png" alt="" class="hotel-popup-image01">
+          <!-- <div>
+            <form action="/upload" method="post" enctype="multipart/form-data">      
+                 Input field for image upload -->       
+                 <!-- <label for="imageUpload">Select an image:</label>
+                <input type="file" id="imageUpload" name="image" accept="image/*">  -->
+                <!-- Submit button <input type="submit" value="Upload">    </form> -->
+          <!-- </div> -->
+          <div class="hotel-popup-file01">
+            <h1 class="add-file01">+Add</h1>
+          </div>
+        </div>
+
+        <div>
+          <form>
+            <input name="Sri Siva Ganga bhakthi Nivas {Hotel Name}" placeholder="Sri Siva Ganga bhakthi Nivas {Hotel Name}" class="sri-siva-input-line01">
+
+            <input name="Sri Siva Ganga bhakthi Nivas {Hotel Name}" placeholder="No. of Room {Total Rooms}" class="sri-siva-input-line02">
+
+            <input name="Sri Siva Ganga bhakthi Nivas {Hotel Name}" placeholder="Estimate Price {Approximatly}" class="sri-siva-input-line03">
+
+          </form>
+        </div>
+
+
+
+        <div class="hotel-wifi-alignment01">
+
+          <div>
+            <div class="line-alignment01">
+              <div class="ticks-alignment01">
+                <input type="checkbox" id="line01" checked="checked" class="optinal-line01">
+                <label for="line01"></label>
+              </div>
+              <div class="wifi-alignment02">
+                <img src="../images/wifi.png" alt="" class="wifi-image01">
+                <h1 class="wifi-option01">Free Wi-Fi</h1>
+              </div>
+            </div>
+
+            <div class="line-alignment01">
+              <div class="ticks-alignment01">
+                <input type="checkbox" id="line02" checked="checked" class="optinal-line01">
+                <label for="line02"></label>
+              </div>
+              <div class="wifi-alignment02">
+                <img src="../images/key-card.png" alt="" class="wifi-image01">
+                <h1 class="wifi-option01">Key Card Access</h1>
+              </div>
+            </div>
+
+            <div class="line-alignment01">
+              <div class="ticks-alignment01">
+                <input type="checkbox" id="line03" checked="checked" class="optinal-line01">
+                <label for="line03"></label>
+              </div>
+              <div class="wifi-alignment02">
+                <img src="../images/ac-icon.png" alt="" class="wifi-image01">
+                <h1 class="wifi-option01">Air Conditioner</h1>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="wifi-part2">
+            <div class="line-alignment01">
+              <div class="ticks-alignment01">
+                <input type="checkbox" id="line04" checked="checked" class="optinal-line01">
+                <label for="line04"></label>
+              </div>
+              <div class="wifi-alignment02">
+                <img src="../images/bathroom.png" alt="" class="wifi-image01">
+                <h1 class="wifi-option01">Private Bathroom</h1>
+              </div>
+            </div>
+
+            <div class="line-alignment01">
+              <div class="ticks-alignment01">
+                <input type="checkbox" id="line05" checked="checked" class="optinal-line01">
+                <label for="line05"></label>
+              </div>
+              <div class="wifi-alignment02">
+                <img src="../images/filter.PNG" alt="" class="wifi-image01">
+                <h1 class="wifi-option01">Free Parking</h1>
+              </div>
+            </div>
+
+            <div class="line-alignment01">
+              <div class="ticks-alignment01">
+                <input type="checkbox" id="line06" checked="checked" class="optinal-line01">
+                <label for="line06"></label>
+              </div>
+              <div class="wifi-alignment02">
+                <img src="../images/helpdesk.png" alt="" class="wifi-image01">
+                <h1 class="wifi-option01">24 Hours Desk</h1>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div>
+          <button class="add-hotel-button">Add Hotel</button>
+        </div>
+
+
+
+
+
+
+
+      </div>
+
+
+
+
+ 
+        <!-- <div class="fisrt_sec_popup">
+            <h3 class="popup_hotelbooking_h3">Hotel Booking</h3>
+            <img class="closebutton" src="../images/OIP.jpg" onclick="closePopUp1()" alt=""
+                srcset="">
+        </div> -->
+
+
+        <!-- <form action="" class="hotel_form" id="hotelsave_form" action="" onsubmit="Addhotel(event)">
+
+            <input type="name" class="inputs_hotelsave" onkeyup="Validityuname(event)" onkeydown="return /[a-z]/i.test(event.key)" name="HotelName" id="HotelName"placeholder="Hotel Name" required><br>
+            <span id=""></span>
+
+            <input type="text"  class="inputs_hotelsave" onkeydown="return /[a-z]/i.test(event.key)"  name="username" id="UserName"placeholder="Your Name" required>
+
+            <input type="text"   onkeypress="return onlyNumberKey(event)" class="inputs_hotelsave" minlength="10" maxlength="10" name="mobileNumber" id="MobileNumber" placeholder="Mobile Number" required>
+
+            <input type="text" onkeypress="return onlyNumberKey(event)" class="inputs_hotelsave" minlength="1" maxlength="2" name="noofadults" id="Noofadults" placeholder="No. of Adults" required>
+
+            <input type="text" onkeypress="return onlyNumberKey(event)" class="inputs_hotelsave lastinputsave" minlength="1" maxlength="2" name="noofchilds" id="Noofchilds"placeholder="No. of Children" required>
+
+            <input type="text" onkeypress="return onlyNumberKey(event)" class="inputs_hotelsave lastinputsave" minlength="1" maxlength="10" name="price" id="price"placeholder="Price" required>
+
+         <button class="clickmebutton" type="submit">Submit File</button>
+        </form>           -->
+    </div>
+ 
+
+    <div class="Hotel_table-container" id="BookingDiv"> 
+       <!-- <table  id="example-table1">
+        <thead>
+          <tr>
+            <th class="Hotel_left">S.No</th>
+            <th>User Name</th>
+            <th>Mobile Number</th>
+            <th>Members</th>
+            <th>Price ( ₹ )</th>
+            <th>Status</th>
+            <th class="Hotel_right">Response</th>
+          </tr>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Bhanu Prakash</td>
+            <td>9876543210</td>
+            <td>3</td>
+            <td>399.00</td>
+            <td class="allocated">Allocated</td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td>2</td>
+            <td>Sivaji Chava</td>
+            <td>9876543210</td>
+            <td class="cell4">3</td>
+            <td class="cell5">450.00</td>
+            <td id="Hotel_statusCell1" class="waiting">Waiting to Respond</td>
+            <td id="Hotel_act1" class="actions">
+              <button class="approve" onclick="Hotel_aprve2()">Approve </button>
+              <button class="reject" onclick="Hotel_rect2()">Reject</button>
+            </td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td>3</td>
+            <td>Chaithanya N</td>
+            <td>9876543210</td>
+            <td class="cell4">4</td>
+            <td class="cell5">1200.00</td>
+            <td class="rejected">Rejected</td>
+            <td></td>
+          </tr>
+        </tbody>
+        <tbody>
+          <tr>
+            <td>4</td>
+            <td>Umesha N</td>
+            <td>9876543210</td>
+            <td class="cell4">2</td>
+            <td class="cell5">2500.00</td>
+            <td id="Hotel_statusCell4" class="waiting">Waiting to Respond</td>
+            <td id="Hotel_act4" class="actions">
+              <button class="approve" onclick="Hotel_approve2()">Approve </button>
+              <button class="reject" onclick="Hotel_reject2()">Reject</button>
+            </td>
+          </tr>
+        </tbody>
+        </thead>
+      </table>  -->
+    </div>
+
+    <div class="fisrt_sec_popup"  >
+      <div>
+        <div  id="succes1" style=" display: none;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; width: 350px; height: 218px;position: absolute; top: 341px; left: 837px; background-color: white;">
+        
+          <img class="" style="width: 150px; margin: 10px 100px" src="../images/oip2.jpg"  alt=""
+              srcset="">
+              <img class="closebutton1" src="../images/OIP.jpg" onclick="closePopUp()" alt=""
+              srcset="">
+    
+          <h3 style=" color: green; font-size: 19px; font-family: roboto; margin-top: 4px;margin-left: 16px;">Your Booking sucessfully Completed</h3>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+ 
+
+
+</body>
+<script src="../Js/date&time.js"></script>
+</html>

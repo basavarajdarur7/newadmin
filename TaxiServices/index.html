@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../CSS/main.css">
+  <script src="../Js/constVariables.js"></script>
+  <script src="../Js/TaxiServices.js"></script>
+  <script src="../Js/table2excel.js"></script>
+  <title>Taxi Services</title>
+</head>
+<body>
+  <!---------------------------------------header------------------------------------------>
+   
+  <header class="header">
+    <a href="../index.html">
+      <div><i class="fa-solid fa-arrow-right-from-bracket logout" style="color: #ffffff;"></i></div>
+      <img class="logout" src="../images/logout.png">
+    </a>
+
+    <img class="profile-img" src="../images/Bhanu-prakash.png">
+    <div class="Bhanu">
+      <p class="Admin-User" style="margin-left: 350px;">Admin User</p>
+      <a class="alink" href="../ViewProfile.html">
+        <p class="view-profile"> View Profile &gt;
+      </a></p>
+    </div>
+
+    <div class="date-time">
+      <p id="date">Fri 14 July</p>
+      <P id="time" id="datetime">03 : 20 PM</P>
+    </div>
+
+  </header>
+  
+  <!------------------------side bar-------------------------------->
+  <aside class="side-bar">
+    <img class="img" src="../images/ujjain-darshan@3x.png" alt="image">
+    <a href="../Home/index.html">
+      <div   id="Home" style="background-color: #ffffff; color: black;" onclick="Dashboard()">  <i class="fa-solid fa-house"></i>  Dashboard Home </div>
+    </a>
+    <a href="../HotelBooking/index.html">
+     <div id="Hotel-Booking" style="background-color: #ffffff; color: black;" onclick="hotelBooking()"><i class="fa-solid fa-hotel"></i>  Hotel Booking</div>
+    </a>
+    <a href="../PujaBooking/index.html">
+      <div id="Puja-Booking" style="background-color: #ffffff; color: black;" onclick="pujaBooking()"><i class="fa-solid fa-gopuram"></i>  Puja Booking</div>
+    </a>
+    <a href="../UjjainDarshan/index.html">
+       <div id="Ujjain-Darshan"  style="background-color: #ffffff; color: black;" onclick="ujjainDarshan()">  <i class="fa-solid fa-archway"></i>  Ujjain Darshan</div>
+    </a>
+    <a href="../OmkareshwaraTour/index.html"> 
+     <div id="Omkarshwar-Tour" style="background-color: #ffffff; color: black;" onclick="omkarshwarTour()"> <i class="fa-solid fa-om"></i></i> Omkareshwar Tour</div>
+    </a> 
+    <a href="../Maa.BaglamukhiTour/index.html">
+      <div id="Maa-Baglamukki-Tour" style="background-color: #ffffff; color: black;" onclick="maaBaglamukkiTour()"><i class="fa-solid fa-person-walking-luggage"> </i>   Maa Baglamukhi Tour</div>
+    </a>
+   <a href="../TaxiServices/index.html"> 
+     <div id="Taxi-Services"  style="background-color:#ff5c02;color: #ffffff; " onclick="taxiServices()"><i class="fa-solid fa-car-side"></i>  Taxi Services</div>
+   </a>
+    <a href="../AirportRides/index.html">
+      <div id="Airport-Rides" style="background-color: #ffffff; color: black;" onclick="airportRides()"><i class="fa-solid fa-plane"></i>  Airport Rides</div>
+    </a>
+    <a href="../Shopping/index.html">
+      <div id="Shopping" style="background-color: #ffffff; color: black;" onclick="shopping()"><i class="fa-solid fa-gifts"></i>  Shopping </div>
+    </a>
+  </aside>
+   
+
+   
+  <!-------------------------Taxi Services html---------------------------->
+  <div class="loader" id="loader_Taxi"></div>
+  <main class="main" id="Taxi" >
+   
+    <p class="taxi_services_Bookings">Taxi Bookings</p>
+
+     <div class="taxi_services_card">
+      <img src="../images/combined-shape@3x.png" alt="">
+      <p> Payments</p>
+      <div class="taxi_services_rupee">2350</div>
+      <div class="taxi_services_rupee1">1800</div>
+      <div class="taxi_services_cash">By Cash</div>
+      <div class="taxi_services_online">Online</div>
+    </div>
+
+    <div class="taxi_services_cards">
+      <img src="../images/request@3x.png" alt="">
+      <p>Bookings</p>
+      <div class="taxi_services_rup">50 </div>
+      <div class="taxi_services_pay">Total</div>
+      <div class="taxi_services_rup1">24</div>
+      <div class="taxi_services_pay1">Ongoing</div>
+      <div class="taxi_services_rup2">6</div>
+      <div class="taxi_services_pay2">Finished</div>
+      <div class="taxi_services_rup3">12</div>
+      <div class="taxi_services_pay3">Booked</div>
+    </div> 
+
+    
+    <div class="puja-download-alignment01">
+      <p class="puja_user">User Requests</p>
+      <div class="puja-download-alignment02">
+        <div class="puja_align"><button class="puja_Download" onclick="taxiServiceDownload()"> Download </button> </div>
+        <!-- <div class="puja_align1"><img class="puja_img1" src="../images/download.PNG" alt=""></div> -->
+
+      </div>
+    </div>
+
+
+
+    <div class="taxi_services_table-container" id="taxiservicediv">
+      <!-- <table>
+           <thead>
+               <tr>
+                   <th class="taxi_services_left">S.No</th>
+                   <th>User Name</th>
+                   <th>Mobile Number</th>
+                   <th>Members</th>
+                   <th>Price ( ₹ )</th>
+                   <th>Status</th>
+                   <th class="taxi_services_right">Response</th>
+               </tr>
+               <tbody>
+                   <tr>
+                       <td>1</td>
+                       <td>Bhanu Prakash</td>
+                       <td>9876543210</td>
+                       <td>3</td>
+                       <td>399.00</td>
+                       <td class="allocated">Allocated</td>
+                   </tr>   
+               </tbody>
+               <tbody>
+                   <tr>
+                       <td>2</td>
+                       <td>Sivaji Chava</td>
+                       <td>9876543210</td>
+                       <td class="cell4">3</td>
+                       <td class="cell5">450.00</td>
+                       <td id="taxi_services_statusCell2" class="waiting">Waiting to Respond</td>
+                       <td id="taxi_services_act2" class="actions">
+                         <button class="approve" onclick="taxi_services_aprve4()">Approve </button>
+                         <button class="reject" onclick="taxi_services_rect4()">Reject</button>
+                       </td>
+                     </tr>
+               </tbody>
+               <tbody>
+                   <tr>
+                       <td>3</td>
+                       <td>Chaithanya N</td>
+                       <td>9876543210</td>
+                       <td class="cell4">4</td>
+                       <td class="cell5">1200.00</td>
+                       <td class="rejected">Rejected</td>
+                       <td></td>
+                     </tr>
+               </tbody>
+               <tbody>
+                   <tr>
+                       <td>4</td>
+                       <td>Umesha N</td>
+                       <td>9876543210</td>
+                       <td class="cell4">2</td>
+                       <td class="cell5">2500.00</td>
+                       <td id="taxi_services_statusCell4" class="waiting">Waiting to Respond</td>
+                      <td id="taxi_services_act4" class="actions">
+                        <button class="approve" onclick="taxi_services_approve4()">Approve </button>
+                        <button class="reject" onclick="taxi_services_reject4()">Reject</button>
+                      </td>
+                     </tr>
+               </tbody>
+           </thead>
+         </table> -->
+    </div>
+  </main>
+<script src="../Js/date&time.js"></script>
+</body>
+</html>

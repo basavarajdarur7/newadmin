@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" >
+  <script src="./Js/constVariables.js"></script>
+  <link rel="stylesheet" href="CSS/ViewProfile.css">
+  <link rel="stylesheet" href="./CSS/">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,900;1,400;1,500;1,900&display=swap"
+  rel="stylesheet">
+ 
+ <script src="https://kit.fontawesome.com/4d1f6c3690.js" crossorigin="anonymous"></script>
+  <title>ViewProfile</title>
+</head>
+<body id="body">
+  <nav id="Dashboard-nav">
+    <!-- <div id="Dashsun">  
+      <span class="nav-sun" > Fri 14 July</span>   <br>
+      <span class="nav-sun" id="datetime"> 05:20 PM</span>
+    </div>  -->
+       
+    <!-- Surendra -->
+ 
+    <div  id="Dashsun" class="date-time">
+      <p class="nav-sun" id="date">Thu 28 Dec</p>
+      <P class="nav-sun" id="datetime">03 : 20 PM</P>  
+    </div>
+ 
+   
+    <div id="Dashbhanu"   >  
+      <span id="LoggedinUser" class="Admin" > Admin User  </span>  <br>
+      <div id="view-div">
+        <span onclick="view()" id="view" style="display: none;">View profile > </span>  <br>
+      </div>
+      <img id="dashboardprofilelogo" src="images/viewprofileadmin1.png" alt="">
+    </div>  
+    <a href="index.html"><img style="    position: absolute;
+      left: 1307px;
+      top: 13px;
+  " src="images/logout icon.PNG" alt=""></a>
+  </nav>
+ 
+  <section id="demo">
+    <aside id="sidebar">
+      <img id="ujjain-logo" src="images/ujjain-darshan@3x.png" alt="">
+     
+      <a href="Home/index.html" style="color: black;">
+        <div   id="home-div" onclick="home()">    Dashboard Home </div>
+      </a>
+      <a href="HotelBooking/index.html" style="color: black;">
+        <div id="hotel-div" onclick="hotelbooking()">    Hotel Booking </div>
+      </a>
+      <a href="PujaBooking/index.html" style="color: black;">
+        <div id="pujabooking-div" onclick="pujabooking()">  Puja Booking  </div>
+      </a>
+      <a href="UjjainDarshan/index.html" style="color: black;">
+       <div id="ujjain_jarshan-div" onclick="ujjaindarshan()">   Ujjain dharshan </div>
+      </a>
+      <a href="OmkareshwaraTour/index.html" style="color: black;">
+        <div id="omkareshwar-tour-div" onclick="omkareshwartour()">  Omkareshwar tour </div>
+      </a>
+      <a href="Maa.BaglamukhiTour/index.html" style="color: black;">
+        <div id="maa-baglamukhi-div" onclick="maabaglamuki()">  Maa Baglamukhi tour </div>
+      </a>
+      <a href="TaxiServices/index.html" style="color: black;">
+        <div id="taxi-services-div" onclick="taxiservices()"> Taxi Services </div>
+      </a>
+      <a href="AirportRides/index.html" style="color: black;">
+       <div id="airport-rides-div" onclick="airportrides()">  Airport Rides </div>
+      </a>
+      <a href="Shopping/index.html" style="color: black;">
+        <div id="Shopping-div" onclick="airportrides()">  Shopping </div>
+       </a>
+    </aside>
+ 
+    <section id="viewprofilesection">
+      <h2 id="viewprofile">View Profile</h2>
+      <img  id="profileimage" src="images/viewprofileadmin.PNG" alt="">
+ 
+      <!-- Surendra -->
+ 
+      <form id="form" onsubmit="savechanges(event)">
+        <h3 id="uname">Username</h3>
+        <input type="text"  onkeydown="return /[a-z]/i.test(event.key)"   disabled  placeholder="Admin User"  id="username"/>  <br>
+        <h2 id="pwd">Password</h2>
+        <input type="" disabled pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder="password" id="password"/> <br>
+        <img id="pwdeye" src="images/pass-hide1.png" onclick="pass()"  alt="">
+        <input  value="Edit Details" id="edit-btn" onclick="Editbtn()"/>
+        <input type="hidden" id="userId">
+        <input type="hidden" id="email">
+        <input type="hidden" id="mobileNo">
+ 
+        <img  id="editimage" src="images/Editimage.PNG" alt="">
+        <button style="display: none;" onclick="cancel(event)" id="ca">Cancel</button>
+        <button style="display: none;" type="submit"  id="sv">Save Changes</button>
+      </form>
+      <div>
+        <p class="listdiv">Must contain at least one number and one uppercase and lowercase letter, and at least 8or more characters  </p>
+      </div>
+     
+    </section>
+  </section>
+</body>
+<script src="./Js/ViewProfile.js"></script>
+<script src="../JAVASCRIPT/date&time.js"></script>
+</html>
+ 
+ 

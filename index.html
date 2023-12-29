@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./CSS/Login.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <section id="main-sec">
+    <section id="image-sec">
+
+      <div id="Mobile_logodiv">
+        <img id="ujjain-logo1" src="images\ujjain-darshan@3x.png" alt="">
+      </div>
+
+      <div class="slideshow-container">
+        <div class="mySlides fade">
+          <img class="Big_imgs" src="images/image 1.PNG" alt="" srcset="">
+          <div class="div_smallimg">
+            <img class="Small_images" src="images/image 1.PNG">
+            <div class="text">Ram Ghat</div>
+          </div>
+        </div>
+
+        <div class="mySlides fade">
+          <img class="Big_imgs" src="images/image 2.PNG" alt="" srcset="">
+          <div class="div_smallimg">
+            <img class="Small_images" src="images/image 2.PNG">
+            <div class="text">Mahakaleshwar Temple</div>
+          </div>
+        </div>
+
+        <div class="mySlides fade">
+          <img class="Big_imgs" src="images/image 3.PNG" alt="" srcset="">
+          <div class="div_smallimg">
+            <img class="Small_images" src="images/image 3.PNG">
+            <div class="text">Kaliadeh Palace</div>
+          </div>
+        </div>
+
+        <div class="mySlides fade">
+          <img class="Big_imgs" src="images/image 4.PNG" alt="" srcset="">
+          <div class="div_smallimg">
+            <img class="Small_images" src="images/image 4.PNG">
+            <div class="text">Shree Kal Bhairav Temple</div>
+          </div>
+        </div>
+
+        <div class="mySlides fade">
+          <img class="Big_imgs" src="images/image 5.PNG" alt="" srcset="">
+          <div class="div_smallimg">
+            <img class="Small_images" src="images/image 5.PNG">
+            <div class="text">Ved Shala</div>
+          </div>
+        </div>
+
+        <div id="dots_div">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </section>
+
+    <section id="login-sec">
+      <img id="ujjain-logo" src="images/logo.png" alt="">
+      <h1 id="welcome-to-h1">Welcome to Admin Panel</h1>
+      <p id="ujjain-dharshan">Ujjain Darshan</p>
+      <h2 id="Please-login">Please Login into Your Account</h2>
+
+      <div id="login-div-contents">
+        <!-- onkeydown="return /[a-z]/i.test(event.key)" -->
+        <form action="" class="form1">
+          <input type="text" class="inputs_hotelsave" name="username" id="UserName" placeholder="Admin Username"
+            required> <br>
+          <input type="password" placeholder="Password" id="Password" name="password" required /> <br>
+          <!-- <img class="eye_icon" onclick="show_password_login()" src="../Images/pass-hide1.png" alt="" srcset=""> -->
+          <img class="eye_icon" onclick="show_password_login()" src="images/pass-hide1.png" alt="" srcset="">
+
+          <input type="submit" value="Login" id="login-btn" onclick="Login()">
+
+          <p id="login_error_msg"></p>
+          <span id="demo"></span>
+        </form>
+      </div>
+    </section>
+  </section>
+</body>
+<script src="Js/Login.js"></script>
+
+</html>
